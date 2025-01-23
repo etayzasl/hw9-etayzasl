@@ -240,9 +240,12 @@ public class LinkedList {
 	 *         if the given memory block is not in this list
 	 */
 	public void remove(MemoryBlock block) {
+		if (block == null) {
+			throw new IllegalArgumentException("index must be between 0 and size");
+		}
 		int index = indexOf(block);
 		if (index == -1) {
-			throw new IllegalArgumentException("block not found in list");
+			throw new IllegalArgumentException("index must be between 0 and size");
 		}
 		remove(index);
 	}	
